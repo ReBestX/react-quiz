@@ -1,120 +1,136 @@
-# React Quiz
+# REACT QUIZ
 
-An interactive quiz application built with React that tests users' knowledge of React concepts and fundamentals.
+*Test your React knowledge interactively and effectively.*
+
+![Last Commit](https://img.shields.io/github/last-commit/rebestx/react-quiz?style=flat&logo=git&logoColor=white&color=61DAFB)  
+![Top Language](https://img.shields.io/github/languages/top/rebestx/react-quiz?style=flat&color=61DAFB)  
+![Language Count](https://img.shields.io/github/languages/count/rebestx/react-quiz?style=flat&color=61DAFB)
+
+*Built with modern tools and technologies:*
+
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black)
+![JSON](https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837.svg?style=flat&logo=npm&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-264de4.svg?style=flat&logo=CSS3&logoColor=white)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Future Enhancements](#future-enhancements)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## Overview
+
+**React Quiz** is an engaging web application that challenges users with multiple-choice questions covering React fundamentals. Designed with a polished UI, live feedback, and a scoring system, it's perfect for learners and professionals looking to reinforce their React knowledge.
 
 ![React Quiz App](https://via.placeholder.com/800x400?text=React+Quiz+App)
 
-## Project Overview
+---
 
-React Quiz is an interactive web application that presents users with a series of multiple-choice questions about React. The application features:
+## Features
 
-- **Interactive Quiz Interface**: Clean and responsive UI with animated transitions between questions
-- **Multiple-choice Questions**: 15+ questions covering React fundamentals, hooks, state management, and more
-- **Point-based Scoring**: Questions are assigned different point values based on difficulty
-- **Timed Quiz Experience**: A countdown timer adds pressure to complete the quiz before time runs out
-- **Progress Tracking**: Visual progress indicators show users their advancement through the quiz
-- **Immediate Feedback**: Correct and incorrect answers are visually indicated after selection
-- **High Score System**: Local storage saves and displays the user's highest score
-- **Result Screen**: Detailed results with score, percentage, and performance emoji
-- **Fail-safe Data Loading**: Fallback to local questions if the API server is unavailable
+- **Interactive UI**: Clean and animated interface for a seamless quiz experience.
+- **Multiple-Choice Questions**: 15+ questions on hooks, state, effects, and more.
+- **Scoring System**: Points awarded based on question difficulty.
+- **Countdown Timer**: Race against the clock to finish the quiz.
+- **Progress Indicator**: Real-time tracking of your current question and score.
+- **Instant Feedback**: Visual cues for right and wrong answers.
+- **High Score Memory**: Saves your highest score locally.
+- **Detailed Result View**: Final score, percentage, and feedback emoji.
+- **Resilient Data Fetching**: Falls back to local JSON if API fetch fails.
 
-## Technical Implementation
-
-- Built with React 19 and modern JavaScript
-- Uses the React Hooks API (useState, useEffect, useReducer) for state management
-- Implements a reducer pattern for complex state management
-- Fetches question data from a JSON server API with error handling
-- Includes animations and transitions for a polished user experience
-- Persists high scores using browser's localStorage
-- Features accessibility considerations (aria attributes, keyboard navigation)
+---
 
 ## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn package manager
+Ensure you have the following tools installed:
+
+- [Node.js](https://nodejs.org/) (v14 or newer)
+- npm or yarn
 
 ### Installation
 
-1. Clone the repository or download the source code
-2. Navigate to the project directory
-3. Install dependencies:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/rebestx/react-quiz
    ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd react-quiz
+   ```
+
+3. **Install dependencies**:
+   ```bash
    npm install
    ```
 
-### Running the Application
+### Usage
 
-In the project directory, you can run:
+Run the application with:
 
-#### `npm start`
+```bash
+npm start
+```
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Visit `http://localhost:3000` in your browser.
 
-#### `npm run server`
+To start the mock API server (for questions):
 
-Starts the JSON server to provide quiz questions API.\
-This runs on [http://localhost:8000](http://localhost:8000).
+```bash
+npm run server
+```
 
-For the best experience, run the server in one terminal and the React application in another.
+Visit `http://localhost:8000` for API data access.  
+*Tip: Run the React app and server in parallel terminals for best results.*
 
-### Additional Scripts
-
-#### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-#### `npm run build`
-
-Builds the app for production to the `build` folder.
+---
 
 ## Project Structure
 
-- `/src` - React components and application logic
-  - `App.js` - Main application component and state management
-  - Component files (`Question.js`, `StartScreen.js`, etc.)
-  - Styling files
-- `/data` - Contains the questions.json file used by the JSON server
-- `/public` - Static assets and HTML template
+```
+react-quiz/
+├── /public          # Static files and index.html
+├── /src             # React components and logic
+│   ├── App.js       # Main app component
+│   ├── components/  # Reusable UI components
+│   └── styles/      # CSS and styling
+├── /data            # JSON file for quiz questions
+```
 
-## Features in Detail
-
-### Quiz Flow
-
-1. **Start Screen**: Introduction screen with the number of questions
-2. **Question Screen**: Displays questions and multiple-choice options
-3. **Progress Bar**: Shows current question number, points earned, and total points
-4. **Timer**: Counts down from a calculated time limit (30 seconds per question)
-5. **Finish Screen**: Shows final score, percentage, and high score status
-
-### State Management
-
-The application uses the useReducer hook to manage complex state transitions between different quiz stages:
-
-- loading
-- error
-- ready
-- active
-- finished
+---
 
 ## Future Enhancements
 
-- User accounts and global leaderboard
-- Additional question categories
-- Difficulty levels
-- Sharing results on social media
-- Custom quiz creation
+- 🔐 User accounts with global leaderboards  
+- 🧠 Add more question categories and difficulty levels  
+- 📱 Share results via social media  
+- 🛠️ Custom quiz creation support
+
+---
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 ## Acknowledgements
 
-- Create React App team for the project scaffolding
-- React community for documentation and resources
-- All contributors to this educational project
+- [Create React App](https://github.com/facebook/create-react-app) for project scaffolding  
+- The React community for documentation, tools, and learning resources  
+- All contributors who helped improve this quiz experience
