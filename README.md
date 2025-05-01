@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# React Quiz
+
+An interactive quiz application built with React that tests users' knowledge of React concepts and fundamentals.
+
+![React Quiz App](https://via.placeholder.com/800x400?text=React+Quiz+App)
+
+## Project Overview
+
+React Quiz is an interactive web application that presents users with a series of multiple-choice questions about React. The application features:
+
+- **Interactive Quiz Interface**: Clean and responsive UI with animated transitions between questions
+- **Multiple-choice Questions**: 15+ questions covering React fundamentals, hooks, state management, and more
+- **Point-based Scoring**: Questions are assigned different point values based on difficulty
+- **Timed Quiz Experience**: A countdown timer adds pressure to complete the quiz before time runs out
+- **Progress Tracking**: Visual progress indicators show users their advancement through the quiz
+- **Immediate Feedback**: Correct and incorrect answers are visually indicated after selection
+- **High Score System**: Local storage saves and displays the user's highest score
+- **Result Screen**: Detailed results with score, percentage, and performance emoji
+- **Fail-safe Data Loading**: Fallback to local questions if the API server is unavailable
+
+## Technical Implementation
+
+- Built with React 19 and modern JavaScript
+- Uses the React Hooks API (useState, useEffect, useReducer) for state management
+- Implements a reducer pattern for complex state management
+- Fetches question data from a JSON server API with error handling
+- Includes animations and transitions for a polished user experience
+- Persists high scores using browser's localStorage
+- Features accessibility considerations (aria attributes, keyboard navigation)
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository or download the source code
+2. Navigate to the project directory
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+### Running the Application
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### `npm run server`
 
-### `npm test`
+Starts the JSON server to provide quiz questions API.\
+This runs on [http://localhost:8000](http://localhost:8000).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For the best experience, run the server in one terminal and the React application in another.
 
-### `npm run build`
+### Additional Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `npm test`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Launches the test runner in interactive watch mode.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `npm run build`
 
-### `npm run eject`
+Builds the app for production to the `build` folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `/src` - React components and application logic
+  - `App.js` - Main application component and state management
+  - Component files (`Question.js`, `StartScreen.js`, etc.)
+  - Styling files
+- `/data` - Contains the questions.json file used by the JSON server
+- `/public` - Static assets and HTML template
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features in Detail
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Quiz Flow
 
-## Learn More
+1. **Start Screen**: Introduction screen with the number of questions
+2. **Question Screen**: Displays questions and multiple-choice options
+3. **Progress Bar**: Shows current question number, points earned, and total points
+4. **Timer**: Counts down from a calculated time limit (30 seconds per question)
+5. **Finish Screen**: Shows final score, percentage, and high score status
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### State Management
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application uses the useReducer hook to manage complex state transitions between different quiz stages:
 
-### Code Splitting
+- loading
+- error
+- ready
+- active
+- finished
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Future Enhancements
 
-### Analyzing the Bundle Size
+- User accounts and global leaderboard
+- Additional question categories
+- Difficulty levels
+- Sharing results on social media
+- Custom quiz creation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgements
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Create React App team for the project scaffolding
+- React community for documentation and resources
+- All contributors to this educational project
